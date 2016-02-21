@@ -24,11 +24,11 @@
         <li class="{{ (location == 'dashboard') ? 'selected' : '' }}">
             <a href="{{ base_url_relative }}"><i class="fa fa-fw fa-th"></i> {{ "PLUGIN_ADMIN.DASHBOARD"|tu }}</a>
         </li>
-        {% if authorize(['admin.configuration', 'admin.super']) %}
+        <!-- {% if authorize(['admin.configuration', 'admin.super']) %}
             <li class="{{ (location == 'system' or location == 'site' or location == 'config') ? 'selected' : '' }}">
                 <a href="{{ base_url_relative }}/config/system"><i class="fa fa-fw fa-wrench"></i> {{ "PLUGIN_ADMIN.CONFIGURATION"|tu }}</a>
             </li>
-        {% endif %}
+        {% endif %} -->
         {% if authorize(['admin.pages', 'admin.super']) %}
             <li class="{{ (location == 'pages') ? 'selected' : '' }}">
                 <a href="{{ base_url_relative }}/pages">
@@ -39,7 +39,7 @@
                 </a>
             </li>
         {% endif %}
-        {% if grav.twig.plugins_hooked_nav %}
+        <!-- {% if grav.twig.plugins_hooked_nav %}
             {% for label, item in grav.twig.plugins_hooked_nav %}
                 {% if authorize(['admin.' ~ item.route, 'admin.super']) %}
                     <li class="{{ (location == item.route) ? 'selected' : '' }}">
@@ -61,7 +61,7 @@
                     </span>
                 </a>
             </li>
-        {% endif %}
+        {% endif %} -->
         {% if authorize(['admin.themes', 'admin.super']) %}
             <li class="{{ (location == 'themes') ? 'selected' : '' }}">
                 <a href="{{ base_url_relative }}/themes">
