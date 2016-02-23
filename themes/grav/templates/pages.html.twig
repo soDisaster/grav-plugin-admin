@@ -88,7 +88,7 @@
             <div class="row">
 
                 <a href="{{ page_url }}" class="page-edit">
-                    <img src="{{ url("theme://images/screenshot" ~ p.slug ~ ".png") }}" />
+                    <img {% if not p.published %}style="opacity:0.33;"{% endif %} src="{{ url("theme://images/screenshot" ~ p.slug ~ ".png") }}" />
                 </a>
 
                 <!-- <span {{ p.children(0).count > 0 ? 'data-toggle="children"' : ''}} data-hint="{{ description|trim(' &bull; ') }}" class="hint--bottom">
